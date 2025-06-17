@@ -1,0 +1,137 @@
+:root {
+    --terra-clara: #E3C8A1;
+    --terra-media: #C9A66B;
+    --terra-escura: #8B5A2B;
+    --verde-terra: #6B8E23;
+    --marrom-terra: #5E3A1F;
+    --texto-escuro: #3A2D1A;
+    --texto-claro: #F5F5F0;
+    }
+
+body {
+    background-image: url('img/tomates2.jpg');
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--texto-escuro);
+    line-height: 1.6;
+    }
+
+header {
+    background-color: var(--marrom-terra);
+    color: var(--texto-claro);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    }
+
+.subtitle {
+    font-style: italic;
+    margin-top: 0.5rem;
+    }
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    }
+
+.intro {
+    background-color: var(--terra-media);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    color: var(--texto-claro);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+.region-info {
+    background-color: var(--verde-terra);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    color: var(--texto-claro);
+    }
+
+.vegetable-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    }
+
+.vegetable-card {
+    background-color: var(--texto-claro);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    }
+
+.vegetable-card:hover {
+    transform: translateY(-5px);
+    }
+
+.vegetable-header {
+    background-color: var(--verde-terra);
+    color: var(--texto-claro);
+    padding: 1rem;
+    text-align: center;
+    }
+
+.vegetable-body {
+    padding: 1.5rem;
+    }
+
+.planting-info {
+    margin-top: 1rem;
+    }
+
+.season {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    background-color: var(--terra-media);
+    color: var(--texto-claro);
+    }
+
+.tips-button {
+    display: block;
+    width: 200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: var(--marrom-terra);
+    color: var(--texto-claro);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    }
+
+.tips-button:hover {
+    background-color: var(--terra-escura);
+    }
+
+footer {
+    background-color: var(--marrom-terra);
+    color: var(--texto-claro);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    }
+
+@media (max-width: 768px) {
+    .vegetable-grid {
+        grid-template-columns: 1fr;
+        }
+    }
+  
+    

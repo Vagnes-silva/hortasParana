@@ -1,128 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Horta Paraná - Épocas de Plantio</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Horta Comunitária</title>
+ 
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Horta Paraná</h1>
-            <p class="subtitle">Épocas de plantio adaptadas ao nosso clima</p>
-        </div>
-    </header>
+  <header>
+    <h1>Horta Comunitária 🌱</h1>
+    <p>Organize e acompanhe o desenvolvimento da sua horta coletiva</p>
+  </header>
 
-    <div class="container">
-        <section class="intro">
-            <h2>Guia de Plantio para o Paraná</h2>
-            <p>O Paraná possui clima subtropical úmido com variações regionais. Este guia considera as características climáticas do estado para indicar os melhores períodos de plantio.</p>
-        </section>
+  <main>
+    <!-- Mapa da Horta -->
+    <section id="mapa-horta">
+      <h2>Mapa da Horta</h2>
+      <div class="grid-horta">
+        <div class="canteiro" data-id="1">Canteiro 1</div>
+        <div class="canteiro" data-id="2">Canteiro 2</div>
+        <div class="canteiro" data-id="3">Canteiro 3</div>
+        <div class="canteiro" data-id="4">Canteiro 4</div>
+        <div class="canteiro" data-id="5">Canteiro 5</div>
+        <div class="canteiro" data-id="6">Canteiro 6</div>
+      </div>
+    </section>
 
-        <div class="region-info">
-            <h3>Características Climáticas</h3>
-            <p>No Paraná, as estações são bem definidas: verões quentes e invernos frios, com geadas em algumas regiões. A primavera e outono são estações de transição com temperaturas amenas.</p>
-        </div>
+    <!-- Cadastro de Plantas -->
+    <section id="cadastro-planta">
+      <h2>Registrar Planta</h2>
+      <form id="form-planta">
+        <input type="text" id="nome-planta" placeholder="Nome (ex: Tomate)" required>
+        <input type="date" id="data-plantio" required>
+        <select id="canteiro-planta" required>
+          <option value="" disabled selected>Selecione o canteiro</option>
+          <option value="1">Canteiro 1</option>
+          <option value="2">Canteiro 2</option>
+          <option value="3">Canteiro 3</option>
+          <option value="4">Canteiro 4</option>
+          <option value="5">Canteiro 5</option>
+          <option value="6">Canteiro 6</option>
+        </select>
+        <button type="submit">Salvar Planta</button>
+      </form>
+    </section>
 
-        <div class="vegetable-grid">
-            <!-- Vegetal 1 -->
-            <div class="vegetable-card">
-                <div class="vegetable-header">
-                    <h3>Alface</h3>
-                </div>
-                <div class="vegetable-body">
-                    <p>Prefere temperaturas entre 10°C e 20°C. Sensível ao calor excessivo.</p>
-                    <div class="planting-info">
-                        <h4>Melhor época no PR:</h4>
-                        <span class="season">Mar-Abr</span>
-                        <span class="season">Ago-Set</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Plantas Cadastradas -->
+    <section id="plantas-cadastradas">
+      <h2>Plantas Registradas</h2>
+      <div id="lista-plantas">
+        <!-- Plantas serão listadas aqui via JavaScript -->
+      </div>
+    </section>
 
-            <!-- Vegetal 2 -->
-            <div class="vegetable-card">
-                <div class="vegetable-header">
-                    <h3>Tomate</h3>
-                </div>
-                <div class="vegetable-body">
-                    <p>Necessita de temperaturas acima de 15°C e proteção contra geadas.</p>
-                    <div class="planting-info">
-                        <h4>Melhor época no PR:</h4>
-                        <span class="season">Set-Nov</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Tarefas -->
+    <section id="calendario">
+      <h2>Tarefas por Canteiro</h2>
+      <button id="nova-tarefa">+ Adicionar Tarefa</button>
+      
+      <div id="form-tarefa">
+        <input type="text" id="texto-tarefa" placeholder="Descrição (ex: Regar, Adubar, Colher)" required>
+        <select id="canteiro-tarefa" required>
+          <option value="" disabled selected>Selecione o canteiro</option>
+          <option value="1">Canteiro 1</option>
+          <option value="2">Canteiro 2</option>
+          <option value="3">Canteiro 3</option>
+          <option value="4">Canteiro 4</option>
+          <option value="5">Canteiro 5</option>
+          <option value="6">Canteiro 6</option>
+        </select>
+        <button id="salvar-tarefa">Salvar Tarefa</button>
+      </div>
 
-            <!-- Vegetal 3 -->
-            <div class="vegetable-card">
-                <div class="vegetable-header">
-                    <h3>Cenoura</h3>
-                </div>
-                <div class="vegetable-body">
-                    <p>Desenvolve-se melhor entre 16°C e 22°C. Tolera geadas leves.</p>
-                    <div class="planting-info">
-                        <h4>Melhor época no PR:</h4>
-                        <span class="season">Fev-Mar</span>
-                        <span class="season">Ago-Set</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Vegetal 4 -->
-            <div class="vegetable-card">
-                <div class="vegetable-header">
-                    <h3>Couve</h3>
-                </div>
-                <div class="vegetable-body">
-                    <p>Resistente ao frio, pode ser plantada o ano todo no Paraná.</p>
-                    <div class="planting-info">
-                        <h4>Melhor época no PR:</h4>
-                        <span class="season">Jan-Dez</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Vegetal 5 -->
-            <div class="vegetable-card">
-                <div class="vegetable-header">
-                    <h3>Pepino</h3>
-                </div>
-                <div class="vegetable-body">
-                    <p>Sensível ao frio, prefere temperaturas acima de 18°C.</p>
-                    <div class="planting-info">
-                        <h4>Melhor época no PR:</h4>
-                        <span class="season">Set-Dez</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Vegetal 6 -->
-            <div class="vegetable-card">
-                <div class="vegetable-header">
-                    <h3>Beterraba</h3>
-                </div>
-                <div class="vegetable-body">
-                    <p>Prefere clima ameno, entre 10°C e 20°C.</p>
-                    <div class="planting-info">
-                        <h4>Melhor época no PR:</h4>
-                        <span class="season">Mar-Abr</span>
-                        <span class="season">Ago-Set</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <a href="dicas.html" class="tips-button">Ver Dicas de Cultivo</a>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>© 2023 Horta Paraná - Todos os direitos reservados</p>
-            <p>Informações adaptadas para o clima do estado do Paraná</p>
-        </div>
+      <div id="lista-tarefas">
+        <!-- Tarefas serão agrupadas por canteiro aqui -->
+      </div>
+    </section>
+       <a href="index_dica.html" class="btn-button">Ver Cuidados Essenciais</a>
+  </main>
+   <footer>
+        <p>Horta Comunitária - Alimentando Corpos e Almas</p>
+        <p>Desenvolvido por Débora Teixeira Matias com colaboração do prof. Vagnes Silva para o Projeto Agrinho 2025</p>
+        <p>Colégio Estadual Professor Paulo Freire - Londrina - PR</p>
     </footer>
-</body>
+  <script src="script.js"></script>
+  </body>
 </html>
